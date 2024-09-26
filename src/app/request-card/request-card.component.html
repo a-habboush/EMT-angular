@@ -1,24 +1,21 @@
-<div class="col">  
-    <div class="card boxshadow">
-      <div class="card-head pt-3 d-flex flex-column align-items-center">
-      
+<div class="col" [class.hide]="!isVisible">  
+  <div class="card boxshadow">
+    <div class="card-head pt-3 d-flex flex-column align-items-center">
       <img src="https://cdn-icons-png.flaticon.com/512/6522/6522516.png" class="card-img-top avatar-big rounded-circle" alt="...">
-      
-      <h5 class="fw-semibold"> {{reqName}} </h5>
+      <h5 class="fw-semibold">{{ reqName }}</h5>
     </div> 
 
     <div class="p-3">
       <p class="text-body-tertiary mb-0">Submitted on:</p>
-      <p class="fw-semibold text-secondary mb-1">1/3/2024</p>
+      <p class="fw-semibold text-secondary mb-1">{{ submittedOn }}</p>
 
       <p class="text-body-tertiary mb-0">Duration:</p>
-      <p class="fw-semibold text-secondary mb-1">2 Weeks (1/4/2023 - 14/4/2023)</p>
+      <p class="fw-semibold text-secondary mb-1">{{ duration }}</p>
 
-    <p class="text-body-tertiary mb-0">Salary:</p>
-    <p class="fw-semibold text-secondary mb-1">1000 AED</p>
+      <p class="text-body-tertiary mb-0">Salary:</p>
+      <p class="fw-semibold text-secondary mb-1">{{ salary }}</p>
     </div>
 
     <app-approve-deny-buttons></app-approve-deny-buttons>
-        
   </div>
 </div>

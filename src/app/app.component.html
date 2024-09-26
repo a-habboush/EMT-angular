@@ -112,28 +112,29 @@
     <h4>Vacation Requests</h4>
     </div>
 
-    <app-search-bar></app-search-bar>
+    <app-search-bar (searchTermChanged)="onSearchTermChanged($event)"></app-search-bar>
     
     </div>
     <hr class="mt-4 border-2 mx-4 mx-sm-4">
 
     <div class="vacationReqBody d-flex mx-2 mx-sm-4 mx-xxl-5">
 
-    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 w-100" id="cardList">
-     
-      
-<app-request-card reqName="Cameron Harding"></app-request-card>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 w-100" id="cardList">
 
-<app-request-card reqName="Ahmad Attar"></app-request-card>
+        <!-- ngFor is used to display the cards in reqCards -->
+        <ng-container *ngFor="let card of reqCards">
+         <app-request-card 
+            *ngIf="card.isVisible"
+            [reqName]="card.reqName">
+          </app-request-card>
+        </ng-container>
 
-<app-request-card reqName="Steven King"></app-request-card>
-  
-    
-  </div>
+
+      </div>
 
     </div>
     <div class="viewMore d-flex justify-content-end mx-4 pb-2">
-      <a class="text-success fw-semibold text-decoration-none fs-6" href="vacationrequests.html">View More ></a>
+      <a class="text-success fw-semibold text-decoration-none fs-6" href="#">View More ></a>
     </div>
   </div>
 

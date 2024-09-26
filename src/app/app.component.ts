@@ -14,8 +14,20 @@ import { SearchBarComponent } from "./search-bar/search-bar.component";
   standalone: true,
   imports: [RouterOutlet, NavbarComponent, WideButtonComponent, CommonModule, CountReqCardComponent, RequestCardComponent, SearchBarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'EMT-angular';
+  reqCards = [
+    { reqName: 'Cameron Harding', isVisible: true },
+    { reqName: 'Ahmad Attar', isVisible: true },
+    { reqName: 'Steven King', isVisible: true }
+  ];
+
+  // Method to update visibility of cards based on the search term
+  onSearchTermChanged(searchTerm: string) {
+    this.reqCards.forEach(card => {
+      card.isVisible = card.reqName.toLowerCase().includes(searchTerm);
+      console.log(`${card.reqName}: ${card.isVisible}`); 
+    });
+  }
 }

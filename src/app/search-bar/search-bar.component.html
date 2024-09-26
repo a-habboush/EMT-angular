@@ -1,4 +1,9 @@
 <div class="search border border-secondary-subtle border-2 rounded-pill d-flex align-items-center">
-    <img src="icons8-search-50.png" alt="">
-    <input style="outline:none;" type="text" name="SearchBar" id="searchBar" placeholder="Search...">
-  </div>
+  <img src="icons8-search-50.png" alt="Search Icon">
+  <input 
+    style="outline:none; border:none; flex-grow: 1; padding-left: 10px;" 
+    type="text" 
+    (input)="onSearchInput($event)" 
+    placeholder="Search..."
+  >
+</div>
