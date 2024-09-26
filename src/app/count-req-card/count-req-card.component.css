@@ -1,0 +1,15 @@
+    
+.InfoCard{
+    display: flex;
+    padding: 1em 2em;
+    align-items: center;
+
+    h6{
+        font-size: 4em;
+    }
+    
+    img{
+        width: 4.5em;
+        height:4.5em;
+    }
+}
