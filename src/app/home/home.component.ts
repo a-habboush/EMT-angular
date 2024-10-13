@@ -10,12 +10,12 @@ import { ImageSliderComponent } from "../image-slider/image-slider.component";
 import { RouterLink } from '@angular/router';
 import { DashboardComponent } from "../dashboard/dashboard.component";
 import { UniversalheaderComponent } from "../universalheader/universalheader.component";
-import { HighlightPipe } from '../highlight.pipe';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent, WideButtonComponent, RequestCardComponent, SearchBarComponent, ApproveDenyButtonsComponent, CountReqCardComponent, CommonModule, ImageSliderComponent, RouterLink, DashboardComponent, UniversalheaderComponent,HighlightPipe],
+  imports: [NavbarComponent, WideButtonComponent, RequestCardComponent, SearchBarComponent, ApproveDenyButtonsComponent, CountReqCardComponent, CommonModule, ImageSliderComponent, RouterLink, DashboardComponent, UniversalheaderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -28,7 +28,7 @@ export class HomeComponent {
     { reqName: 'Steven King', isVisible: true }
   ];
 
-  // Method to update visibility of cards based on the search term
+  // Method to update visibility of cards
   onSearchTermChanged(searchTerm: string) {
     this.reqCards.forEach(card => {
       card.isVisible = card.reqName.toLowerCase().includes(searchTerm);
