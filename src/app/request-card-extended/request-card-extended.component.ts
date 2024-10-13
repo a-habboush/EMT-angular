@@ -3,15 +3,16 @@ import { ApproveDenyButtonsComponent } from "../approve-deny-buttons/approve-den
 
 
 @Component({
-  selector: 'app-request-card',
+  selector: 'app-request-card-extended',
   standalone: true,
   imports: [ApproveDenyButtonsComponent],
-  templateUrl: './request-card.component.html',
-  
+  templateUrl: './request-card-extended.component.html',
+  styleUrl: './request-card-extended.component.css'
 })
-export class RequestCardComponent {
+export class RequestCardExtendedComponent {
   @Input() reqName!: string;
 
+  
   @Input() isVisible: boolean = true;
 
   // Static values

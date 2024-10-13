@@ -1,0 +1,84 @@
+
+
+<div class="container-md mt-5 d-flex justify-content-between gap-4">
+  <h4 class="fw-semibold"> Welcome Back Ahmad! Here are your latest updates. </h4>
+  <app-wide-button label="New Request" customClass="btn-success text-light"></app-wide-button>
+</div>
+
+
+<div class="container-md mt-5">
+  
+  <div class="updates d-flex justify-content-evenly flex-wrap gap-4">
+
+    <div class="dashboard boxshadow bg-light rounded-5 flex-grow-1 px-3 py-2">
+   <app-dashboard></app-dashboard>
+  </div> 
+    
+        <div class="requestsInfoCards d-flex justify-content-center gap-4">
+
+            <app-count-req-card></app-count-req-card>
+
+            <app-count-req-card></app-count-req-card>
+        </div>
+    </div>
+  </div>
+
+
+  <div class="container-md mt-5">
+
+    <h5 class="fw-semibold">Latest News:</h5>
+
+    <!-- mobile only image slider caption -->
+    <h6 class="fw-bold d-block d-md-none">Best Spots For A Summer Vacation</h6>
+    <p class="d-block d-md-none">Check out these spots where we provide you with a discount code! Type VACATION when inserting the promo code and behold the surprise!</p>
+   
+    <app-image-slider></app-image-slider>
+  
+</div>
+
+
+<div class="container-md mt-5" id="last-container">
+
+  <div class="vacationReq boxshadow bg-light rounded-4">
+
+   <div class="universalHeader d-flex justify-content-between mx-sm-2 pt-4 px-3">
+
+    <app-universalheader></app-universalheader>
+
+    <app-search-bar (searchTermChanged)="onSearchTermChanged($event)"></app-search-bar>
+    
+    </div>
+    <hr class="mt-4 border-2 mx-4 mx-sm-4">
+
+    <div class="vacationReqBody d-flex mx-2 mx-sm-4 mx-xxl-5">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 w-100" id="cardList">
+
+        <!-- ngFor is used to display the cards in reqCards -->
+        <ng-container *ngFor="let card of reqCards">
+        
+         <app-request-card 
+            *ngIf="card.isVisible"
+            [reqName]="card.reqName">
+            <p class="text-body-tertiary mb-0">Salary:</p>
+            <p class="fw-semibold text-secondary mb-1">1000 AED</p>
+            
+            <app-approve-deny-buttons footer></app-approve-deny-buttons>
+          </app-request-card>
+        </ng-container>
+    
+    
+      </div>
+      
+
+    </div>
+    <div class="viewMore d-flex justify-content-end mx-4 pb-2">
+      <a class="text-success fw-semibold text-decoration-none fs-6" routerLink="/VacationRequests">View More ></a>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+

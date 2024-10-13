@@ -1,0 +1,68 @@
+
+<div class="container-md mt-5">
+    <app-dashboard-extended></app-dashboard-extended>
+            </div>
+    
+    <div class="container-md mt-5">
+    
+        <div class="history bg-light boxshadow rounded-4">
+            
+            <div class="historyHeader universalHeader d-flex px-3 pt-3">
+            
+                <app-universalheader title="History"></app-universalheader>
+            
+                
+            </div>
+            
+            <div class="historyBody">
+              <hr class="mt-4 border-2 mx-4 mx-sm-4">        
+                   
+
+                        <app-history-card></app-history-card>
+                            
+                </div>
+    
+                <div class="viewMore d-flex justify-content-end px-5 pb-4 mt-3 mt-xl-5">
+                  <a class="text-success fw-semibold text-decoration-none fs-6" routerLink="/Profile">View More ></a>
+                </div>
+    
+                  </div>
+                  
+                </div>
+            
+            
+    
+    <div class="container-md mt-5" id="last-container">
+    
+        <div class="vacationReq boxshadow bg-light rounded-4 ">
+            
+            <div class="vacationReqHeader universalHeader d-flex px-4 pt-3">
+            
+                <app-universalheader title="Pending Requests"></app-universalheader>
+            
+                  </div>
+            
+                  <div class="vacationReqBody d-flex mt-5 mx-2 mx-sm-4 mx-xxl-5">
+            
+                  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 w-100" id="cardList">
+                   
+                    <ng-container *ngFor="let card of reqCards">
+                        <app-request-card 
+                           *ngIf="card.isVisible"
+                           [reqName]="card.reqName">
+                           
+                           <h6 class="mt-5 mb-0">Currently at:</h6>
+                           <p class="fw-bold text-success">Omar Ahmad</p>
+                        
+                         </app-request-card>
+                       </ng-container>
+            
+                </div>
+                  </div>
+    
+                  <div class="viewMore d-flex justify-content-end px-5 pb-4 pt-3 pt-xl-0">
+                    <a class="text-success fw-semibold text-decoration-none fs-6" routerLink="/VacationRequests">View More ></a>
+                  </div>
+    
+                </div>
+            </div>

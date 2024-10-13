@@ -1,0 +1,21 @@
+<div class="pager d-flex justify-content-center mt-5 mb-5">
+    
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item" [ngClass]="previousButton">
+            
+            <a class="page-link text-secondary" [routerLink]="dynamicLink1" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link text-bg-light" [ngClass]="customClass1" routerLink="/VacationRequests">1</a></li>
+          <li class="page-item"><a class="page-link text-bg-light" [ngClass]="customClass2"  routerLink="/VacationRequests2">2</a></li>
+          <li class="page-item"><a class="page-link text-bg-light" [ngClass]="customClass3"  routerLink="/VacationRequests3">3</a></li>
+          <li class="page-item" [ngClass]="nextButton">
+            <a class="page-link text-bg-light" [routerLink]="dynamicLink2" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+</div> 

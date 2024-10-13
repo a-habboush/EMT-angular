@@ -12,10 +12,9 @@
       <p class="text-body-tertiary mb-0">Duration:</p>
       <p class="fw-semibold text-secondary mb-1">{{ duration }}</p>
 
-      <p class="text-body-tertiary mb-0">Salary:</p>
-      <p class="fw-semibold text-secondary mb-1">{{ salary }}</p>
-    </div>
+      <ng-content></ng-content>
 
-    <app-approve-deny-buttons></app-approve-deny-buttons>
+    </div>
+    <ng-content select="[footer]"> </ng-content>
   </div>
 </div>

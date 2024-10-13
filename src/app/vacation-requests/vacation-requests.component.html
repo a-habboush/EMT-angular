@@ -1,0 +1,54 @@
+<div class="container-fluid mt-4">
+
+    <div class="universalHeader d-flex justify-content-between mx-sm-5 p-3">
+    
+        <app-universalheader></app-universalheader>
+    
+        <app-search-bar (searchTermChanged)="onSearchTermChanged($event)"></app-search-bar>
+    
+        </div>
+        
+    <hr class="mt-2 border-2 mx-4 mx-sm-5">
+    
+    <div class="selectionFilterBar d-flex justify-content-between mx-4 mx-sm-5 mb-4">
+    
+    <div class="form-check text-secondary">
+        <input class="form-check-input SelectAllButton" type="checkbox" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Select All
+        </label>
+      </div>
+    
+    
+      <div class="filter-button cursor-pointer" role="button">
+        <img src="filter.png" alt="" style="width: 2.5em; height: 2em;">
+      </div>
+      
+    </div>
+    
+    
+    <div class="vacationReqBody mx-4 mx-sm-5">
+    
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 w-100" id="cardList">
+         
+            <ng-container *ngFor="let card of reqCards">
+                <app-request-card-extended 
+                   *ngIf="card.isVisible"
+                   [reqName]="card.reqName">
+                   
+                </app-request-card-extended>
+               </ng-container>
+    
+    
+          </div>
+        </div>
+    
+    
+
+<app-pager [CurrentPage]="1"></app-pager>
+
+
+
+    
+    </div>
+
